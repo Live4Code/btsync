@@ -15,12 +15,6 @@ if [ -z "$MYHOSTNAME" ]; then
     exit 1
 fi
 
-# Do not accept read-write keys
-# These keys starts with A or D
-if [[ "$SYNCKEY" =~ ^(A|D).* ]]; then
-  echo -e"\n\nRead-write key found.\nPlease only use read-only keys.\n\nAborting.\n\n"
-  exit 1
-fi
 
 # Make sure the folder exists
 mkdir -p /sync/storage
